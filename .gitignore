@@ -1,0 +1,42 @@
+# Local .terraform directories
+**/.terraform/*
+
+# .tfstate files
+*.tfstate
+*.tfstate.*
+
+# Crash log files
+crash.log
+
+# Ignore any .tfvars files that are generated automatically for each Terraform run. Most
+# .tfvars files are managed as part of configuration and so should be included in
+# version control, but this will ignore any .tfvars files that are generated.
+*.auto.tfvars
+
+# Ignore override files as they are usually used to override resources locally and so
+# are not checked in
+override.tf
+override.tf.json
+*_override.tf
+*_override.tf.json
+
+# Include override files you do wish to add to version control using ! (negate ignore)
+# The following is included by default when the repository is initialized, and is retained
+# for Windows users to have a clear example of negating rules. It is not included by default
+# on non-Windows systems or when the repository is reinitialized, but is safe to include in
+# any case.
+# !example_override.tf
+
+# Ignore CLI configuration files
+.terraformrc
+terraform.rc
+
+# Ignore Terragrunt files
+.terraform.lock.hcl
+terragrunt-cache/
+
+# Ignore IntelliJ files
+.idea/
+
+# Ignore VSCode files
+.vscode/
