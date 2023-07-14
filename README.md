@@ -104,6 +104,40 @@ module "vpc" {
 ```
 Remember to replace ../infrastructure-modules/vpc with the correct relative path to the vpc module directory, and define any required variables within the module block.
 
+## Infrastructure Live v2
+
+This branch contains the infrastructure setup for the VPC across all environments using a module from `infrastructure-modules/vpc`.
+
+### VPC Setup
+
+The `vpc` module is responsible for setting up the VPC in each of our environments.
+
+#### How to Use the `vpc` Module
+
+To use the `vpc` module, you'll need to call it within your Terraform configuration:
+
+```hcl
+module "vpc" {
+  source = "../../../infrastructure-modules/vpc"
+
+  env             = "dev"
+  azs             = ["us-east-1a", "us-east-1b"]
+  private_subnets = ["10.0.0.0/19", "10.0.32.0/19"]
+  public_subnets  = ["10.0.64.0/19", "10.0.96.0/19"]
+
+  private_subnet_tags = {
+    "kubernetes.io/role/internal-elb" = 1
+    "kubernetes.io/cluster/dev-demo"  = "owned"
+  }
+
+  public_subnet_tags = {
+    "kubernetes.io/role/elb"         = 1
+    "kubernetes.io/cluster/dev-demo" = "owned"
+  }
+}
+```
+
+
 ### Contributing
 
 Changes to the infrastructure should go through a pull request process where they can be reviewed before being applied. Please make sure any changes are well-documented and include updates to this `README.md` if necessary.
