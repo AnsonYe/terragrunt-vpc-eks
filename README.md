@@ -216,6 +216,22 @@ module "kubernetes-addons" {
 }
 ```
 
-### Contributing
+## Infrastructure Live v4 - Demo
+
+This branch (`infrastructure-live-v4/demo`) demonstrates the usage of the `infrastructure-modules/kubernetes-addons` module's Cluster Autoscaler functionality across all environments.
+
+### Kubernetes Add-ons - Cluster Autoscaler Setup
+
+The `kubernetes-addons` module, specifically the Cluster Autoscaler functionality, is responsible for automatically adjusting the size of the Kubernetes cluster in response to resource demands.
+
+#### Running the Demo
+To perform the demonstration, we apply a Kubernetes configuration to the EKS cluster which would trigger the autoscaler. This configuration is saved in `demo/deployment.yaml`, and to apply it we would run the following command:
+
+```bash
+kubectl apply -f demo/deployment.yaml
+```
+
+
+## Contributing
 
 Changes to the infrastructure should go through a pull request process where they can be reviewed before being applied. Please make sure any changes are well-documented and include updates to this `README.md` if necessary.
