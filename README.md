@@ -176,6 +176,45 @@ inputs = {
 }
 ```
 
+## Infrastructure Live v4
+
+This branch demonstrates the usage of the `infrastructure-modules/vpc`, `infrastructure-modules/eks` and `infrastructure-modules/kubernetes-addons` modules across all environments.
+
+### VPC Setup
+
+The `vpc` module is responsible for setting up the VPC in each of our environments.
+
+### EKS Setup
+
+The `eks` module is responsible for setting up the EKS (Elastic Kubernetes Service) cluster in each of our environments.
+
+### Kubernetes Add-ons Setup
+
+The `kubernetes-addons` module is responsible for setting up additional Kubernetes resources in each of our environments.
+
+#### How to Use These Modules
+
+To use these modules, you'll need to define them within your configuration file:
+
+```hcl
+module "vpc" {
+  source = "../infrastructure-modules/vpc"
+  // Pass in any required variables
+  ...
+}
+
+module "eks" {
+  source = "../infrastructure-modules/eks"
+  // Pass in any required variables
+  ...
+}
+
+module "kubernetes-addons" {
+  source = "../infrastructure-modules/kubernetes-addons"
+  // Pass in any required variables
+  ...
+}
+```
 
 ### Contributing
 

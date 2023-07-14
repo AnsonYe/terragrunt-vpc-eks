@@ -32,7 +32,20 @@ override.tf.json
 terraform.rc
 
 # Ignore Terragrunt files
+.*.sw?
+.idea
+terragrunt.iml
+vendor
+.terraform
+.vscode
+*.tfstate
+*.tfstate.backup
+*.out
+.terragrunt-cache
+.bundle
+.ruby-version
 .terraform.lock.hcl
+terragrunt
 terragrunt-cache/
 
 # Ignore IntelliJ files
